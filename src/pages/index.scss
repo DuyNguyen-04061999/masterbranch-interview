@@ -1,0 +1,121 @@
+.fc {
+    /* the calendar root */
+    width: 100%;
+    margin: 0 auto;
+    &-click {
+        .fc-daygrid-day-top {
+            .fc-daygrid-day-number {
+                background-color: #ffe4c8 !important;
+            }
+        }
+    }
+    &-toolbar {
+        &-chunk {
+            display: flex;
+        }
+        &-title {
+            font-weight: 700;
+            color: #0f4c81;
+        }
+    }
+    .fc-daygrid-day.fc-day {
+        background-color: #fff;
+    }
+    &-day {
+        padding-top: 10px !important;
+    }
+    .fc-daygrid-day-top {
+        justify-content: center;
+        cursor: pointer;
+    }
+    .fc-button {
+        .fc-icon {
+            color: #5684ae;
+        }
+
+        // &:hover {
+        //     background-color: unset;
+        //     border-color: transparent;
+        // }
+        &:focus {
+            outline: none;
+            background-color: unset;
+            box-shadow: unset !important;
+        }
+        &:active {
+            background-color: unset !important;
+            border-color: transparent !important;
+            box-shadow: unset !important;
+
+            .fc-icon {
+                color: #326391;
+            }
+        }
+    }
+    .fc-today-button {
+        background-color: transparent;
+        border-color: #5684ae;
+        color: #5684ae;
+        border-radius: 12px;
+        text-transform: capitalize;
+        cursor: pointer;
+        &:focus,
+        &:active {
+            border-color: #5684ae;
+            color: #5684ae;
+            box-shadow: unset !important;
+        }
+        &:hover {
+            background: #5684ae;
+            border-color: #5684ae;
+        }
+    }
+    .fc-daygrid-day-number {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s;
+        &:hover {
+            background-color: #0f4c81;
+            color: #fff;
+        }
+    }
+    &-day-today {
+        .fc-daygrid-day-top {
+            .fc-daygrid-day-number {
+                background-color: #0f4c81 !important;
+                color: #fff;
+            }
+        }
+    }
+    .fc {
+        &-prev-button {
+            background-color: transparent;
+            border-color: transparent;
+            outline: none;
+
+            &:hover {
+                background-color: unset;
+                border-color: transparent;
+            }
+            &:focus {
+                box-shadow: unset !important;
+            }
+        }
+        &-next-button {
+            background-color: transparent;
+            border-color: transparent;
+            outline: none;
+            &:hover {
+                background-color: unset;
+                border-color: transparent;
+            }
+            &:focus {
+                box-shadow: unset !important;
+            }
+        }
+    }
+}

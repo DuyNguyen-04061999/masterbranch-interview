@@ -1,0 +1,14 @@
+.small-calendar {
+    .fc {
+        &-header-toolbar {
+            justify-content: center !important;
+        }
+        &-scrollgrid {
+            border: none;
+        }
+    }
+    .fc td,
+    .fc th {
+        border-style: none !important;
+    }
+}

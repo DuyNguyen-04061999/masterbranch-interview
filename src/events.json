@@ -1,0 +1,48 @@
+[
+  {
+    "eventDate": "2024-10-22",
+    "events": [
+      {
+        "title": "First session with Alex Stan",
+        "timeStart": "2024-10-22T06:00:00Z",
+        "timeEnd": "2024-10-22T23:30:00Z",
+        "type": 1
+      },
+      {
+        "title": "Meet the Royal College of Art in Ho Chi Minh City",
+        "timeStart": "2024-10-22T12:00:00Z",
+        "timeEnd": "2024-10-22T17:30:00Z",
+        "type": 2
+      },
+      {
+        "title": "The Trading Summit 2024（Vietnam）",
+        "timeStart": "2024-10-22T14:00:00Z",
+        "timeEnd": "2024-10-22T18:30:00Z",
+        "type": 1
+      },
+      {
+        "title": "Color Fiesta season 13: PARANORMAL",
+        "timeStart": "2024-10-22T08:00:00Z",
+        "timeEnd": "2024-10-22T08:00:00Z",
+        "type": 2
+      }
+    ]
+  },
+  {
+    "eventDate": "2024-10-04",
+    "events": [
+      {
+        "title": "MANRIDE UNCHARTED - VIETNAM",
+        "timeStart": "2024-10-04T08:00:00Z",
+        "timeEnd": "2024-10-04T12:00:00Z",
+        "type": 1
+      },
+      {
+        "title": "Family Office: From Theory to Reality",
+        "timeStart": "2024-10-04T06:00:00Z",
+        "timeEnd": "2024-10-04T09:00:00Z",
+        "type": 2
+      }
+    ]
+  }
+]
