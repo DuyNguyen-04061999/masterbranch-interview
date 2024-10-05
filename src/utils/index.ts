@@ -1,6 +1,8 @@
 import moment from "moment";
+import classNames from "classnames";
 
-export * from "./classNames";
+export const cn = classNames;
+
 export const sendTimeZoneZeroHour = (date: string | Date) => {
   return new Date(
     new Date(
