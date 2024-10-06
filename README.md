@@ -20,7 +20,7 @@ or
 
 ```sh
 yarn install
-
+```
 ## 🚀 Run the app:
 
 **TROUBLESHOOTING NOTE**: If you are having trouble running the app for the first time, please delete the `node_module` and run `Installing dependencies`.
