@@ -25,7 +25,6 @@ export default defineConfig({
     jsxInject: `import React from 'react'`,
   },
   build: {
-    minify: false,
     rollupOptions: {
       output: {
         manualChunks(id) {
