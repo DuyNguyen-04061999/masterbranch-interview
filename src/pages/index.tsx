@@ -3,12 +3,13 @@ import SmallCalendar from "@/components/small-calendar";
 import "./index.scss";
 import { useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
+import { Events } from "@/type";
 const Home = () => {
   const bigCalendarRef = useRef<FullCalendar>(null);
   const smallCalendarRef = useRef<FullCalendar>(null);
   const [title, setTitle] = useState("");
   const [eventDate, setEventDate] = useState("");
-
+  const [events, setEvents] = useState<Events>([]);
   const handleViewChange = (selectedView: string) => {
     const bigCalendarApi = bigCalendarRef.current?.getApi();
     const smallCalendarApi = smallCalendarRef.current?.getApi();
@@ -34,7 +35,7 @@ const Home = () => {
   const onUpdateTitle = (title: string) => setTitle(title);
 
   const onUpdateDateClick = (date: string) => setEventDate(date);
-
+  const onUpdateEvents = (events: Events) => setEvents(events);
   return (
     <div className="max-w-[1200px] px-[15px] mx-auto flex gap-5 h-[200vh] pt-5">
       <SmallCalendar
@@ -44,6 +45,8 @@ const Home = () => {
         title={title}
         onUpdateDateClick={onUpdateDateClick}
         eventDate={eventDate}
+        events={events}
+        onUpdateEvents={onUpdateEvents}
       />
       <BigCalendar
         handleViewChange={handleViewChange}
@@ -55,6 +58,7 @@ const Home = () => {
         title={title}
         onUpdateDateClick={onUpdateDateClick}
         eventDate={eventDate}
+        onUpdateEvents={onUpdateEvents}
       />
     </div>
   );

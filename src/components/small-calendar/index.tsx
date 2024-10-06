@@ -3,13 +3,14 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import HeaderSmallToolbar from "@/components/small-calendar/header";
 import "./index.scss";
 import eventsData from "@/events.json";
 import { Button } from "@mui/material";
 import Event from "@/components/small-calendar/event";
 import moment from "moment";
+import { Events } from "@/type";
 
 interface SmallCalendarProps {
   className?: JSX.IntrinsicElements["div"]["className"];
@@ -18,14 +19,9 @@ interface SmallCalendarProps {
   onClickPrev: () => void;
   eventDate: string;
   onUpdateDateClick: (date: string) => void;
+  events: Events;
+  onUpdateEvents: (events: Events) => void;
 }
-
-type Events = Array<{
-  title: string;
-  timeStart: string;
-  timeEnd: string;
-  type: number;
-}>;
 
 const SmallCalendar = forwardRef<FullCalendar, SmallCalendarProps>(
   (
@@ -36,10 +32,11 @@ const SmallCalendar = forwardRef<FullCalendar, SmallCalendarProps>(
       title,
       eventDate,
       onUpdateDateClick,
+      events,
+      onUpdateEvents,
     },
     ref
   ) => {
-    const [events, setEvents] = useState<Events>([]);
     return (
       <div className="w-full border h-max">
         <div className={cn("flex-1 small-calendar border-b-2", className)}>
@@ -66,7 +63,7 @@ const SmallCalendar = forwardRef<FullCalendar, SmallCalendarProps>(
               const listEvents = eventsData.find(
                 (item) => item.eventDate === info.dateStr
               );
-              setEvents(listEvents?.events || []);
+              onUpdateEvents(listEvents?.events || []);
             }}
           />
         </div>
@@ -101,7 +98,7 @@ const SmallCalendar = forwardRef<FullCalendar, SmallCalendarProps>(
                 {...item}
                 timeEnd={formatTime(item.timeEnd)}
                 timeStart={formatTime(item.timeStart)}
-                title={item.title}
+                title={item.eventTitle}
               />
             ))
           ) : (

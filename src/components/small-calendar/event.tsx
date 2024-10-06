@@ -1,11 +1,9 @@
+import { EventItem } from "@/type";
 import { cn } from "@/utils";
 
-export interface EventProps extends React.HTMLAttributes<HTMLDivElement> {
-  timeEnd: string;
-  timeStart: string;
-  title: string;
-  type: number;
-}
+export interface EventProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    EventItem {}
 
 const Event = ({
   timeEnd,
@@ -13,6 +11,7 @@ const Event = ({
   title,
   className,
   type,
+  imgUser,
   ...props
 }: EventProps) => {
   return (
@@ -67,7 +66,7 @@ const Event = ({
         {type === 1 && (
           <div className="flex items-center gap-2 mt-4">
             <img
-              src="/img/avatar.jpg"
+              src={imgUser}
               alt="img"
               className="w-8 h-8 rounded-full object-cover"
             />

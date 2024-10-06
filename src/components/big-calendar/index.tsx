@@ -9,6 +9,8 @@ import data from "@/data.json";
 import { cn } from "@/utils";
 import "./index.scss";
 import HeaderBigToolbar from "@/components/big-calendar/header";
+import { Events } from "@/type";
+import eventsData from "@/events.json";
 
 interface BigCalendarProps {
   className?: JSX.IntrinsicElements["div"]["className"];
@@ -20,6 +22,7 @@ interface BigCalendarProps {
   title: string;
   onUpdateDateClick: (date: string) => void;
   eventDate: string;
+  onUpdateEvents: (events: Events) => void;
 }
 
 const BigCalendar = forwardRef<FullCalendar, BigCalendarProps>(
@@ -34,6 +37,7 @@ const BigCalendar = forwardRef<FullCalendar, BigCalendarProps>(
       onUpdateTitle,
       onUpdateDateClick,
       eventDate,
+      onUpdateEvents,
     },
     ref
   ) => {
@@ -86,6 +90,10 @@ const BigCalendar = forwardRef<FullCalendar, BigCalendarProps>(
           dayMaxEvents={2}
           dateClick={(info) => {
             onUpdateDateClick(info.dateStr);
+            const listEvents = eventsData.find(
+              (item) => item.eventDate === info.dateStr
+            );
+            onUpdateEvents(listEvents?.events || []);
           }}
           datesSet={(arg) => onUpdateTitle(arg.view.title)}
           displayEventEnd={true}

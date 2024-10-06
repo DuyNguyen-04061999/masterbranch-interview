@@ -50,7 +50,7 @@ const HeaderBigToolbar = ({
         </Button>
         <PrevCalendar onClickPrev={onClickPrev} className="ml-[30px]" />
         <NextCalendar onClickNext={onClickNext} className="ml-10" />
-        <TitleCalendar title={title} className="ml-10" />
+        <TitleCalendar title={title} className="ml-10 text-[28px]" />
       </div>
 
       <Autocomplete
